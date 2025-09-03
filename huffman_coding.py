@@ -157,7 +157,6 @@ import os
 
 og_file = input("Enter the name of the input text file (with .txt extension): ")
 
-#og_file = 'input.txt'
 print(f"Reading from {og_file}")
 
 with open(og_file, 'r') as f:
@@ -199,6 +198,8 @@ print("Check bound: H =", entropy, "≤ L =", avg_bits_per_symbol, "< H+1 =", en
 
 compress_to_file(text, codebook, 'compressed.huff')
 decompressed_text = decompress_from_file('compressed.huff')
+with open('decompressed.txt', 'w') as f:
+    f.write(decompressed_text)
 
 original_size = os.path.getsize('input.txt')
 
